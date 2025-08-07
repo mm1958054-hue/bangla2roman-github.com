@@ -1,1 +1,42 @@
 # bangla2roman-github.com
+echo "# bangla2roman-github.com" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/mm1958054-hue/bangla2roman-github.com.git
+git push -u origin mainBangla to Roman Converter<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Bangla to Roman Converter</title>
+      </head>
+      <body>
+        <h1>বাংলা থেকে রোমান কনভার্টার</h1>
+          <textarea id="bangla" placeholder="বাংলা লেখো..."></textarea>
+            <p>রোমান: <span id="roman"></span></p>
+
+              <script>
+                  const map = {
+                        'তুমি': 'tumi',
+                              'কি': 'ki',
+                                    'কেমন': 'kemon',
+                                          'আছো': 'acho',
+                                                'ভালো': 'valo',
+                                                      'না': 'na',
+                                                            'হ্যাঁ': 'ha',
+                                                                  'আমার': 'amar',
+                                                                        'নাম': 'nam',
+                                                                              'কি?': 'ki?'
+                                                                                  };
+
+                                                                                      document.getElementById('bangla').addEventListener('input', function () {
+                                                                                            const input = this.value.trim();
+                                                                                                  const words = input.split(' ');
+                                                                                                        const romanWords = words.map(word => map[word] || word);
+                                                                                                              document.getElementById('roman').innerText = romanWords.join(' ');
+                                                                                                                  });
+                                                                                                                    </script>
+                                                                                                                    </body>
+                                                                                                                    </html>
